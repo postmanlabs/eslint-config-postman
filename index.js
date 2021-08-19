@@ -36,6 +36,7 @@ module.exports = {
         mocha: true
       },
       globals: {
+        'exec': true,
         'app': true, // as part of test bootstrap
         'expect': true, // as part of test bootstrap
         'sails': true
@@ -47,6 +48,7 @@ module.exports = {
     {
       files: ['test/**/*', 'npm/*'],
       rules: {
+        'security/detect-child-process': 'off',
         'security/detect-non-literal-require': 'off',
         'security/detect-non-literal-fs-filename': 'off',
         'node/no-process-env': 'off',
