@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-postman",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Common ESLint rules for Postman",
   "bugs": "https://github.com/postmanlabs/eslint-config-postman/issues",
   "main": "index.js",

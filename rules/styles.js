@@ -112,10 +112,10 @@ module.exports = {
     'operator-linebreak': ['error', 'after'],
     'padded-blocks': ['error', 'never'],
     'padding-line-between-statements': ['error',
-      { 'blankLine': 'always', 'prev': ['block', 'block-like', 'for', 'function', 'multiline-expression', 'const', 'let', 'var'], 'next': '*' },
+      { 'blankLine': 'any', 'prev': 'expression', 'next': 'expression' },
+      { 'blankLine': 'always', 'prev': ['block', 'for', 'function', 'multiline-expression', 'const', 'let', 'var'], 'next': '*' },
       { 'blankLine': 'always', 'prev': '*', 'next': ['break', 'continue', 'multiline-expression', 'multiline-block-like', 'return', 'export', 'const', 'let', 'var'] },
-      { 'blankLine': 'any', 'prev': 'if', 'next': 'if' },
-      { 'blankLine': 'any', 'prev': 'expression', 'next': 'expression' }
+      { 'blankLine': 'any', 'prev': 'if', 'next': 'if' }
     ],
     'quote-props': ['error', 'as-needed'],
     'quotes': ['error', 'single'],
