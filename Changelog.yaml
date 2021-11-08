@@ -1,8 +1,10 @@
 # eslint-config-postman
 
-unreleased:
-  - Added usage instructions to README
-  - Made config self-contained with plugins for easier consumption
+0.0.3:
+  date: 2021-11-08
+  minor changes:
+    - Added usage instructions to README
+    - Made config self-contained with plugins for easier consumption
 
 0.0.2:
   date: 2021-08-19
