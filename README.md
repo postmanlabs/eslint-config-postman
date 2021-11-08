@@ -17,7 +17,7 @@ Update the `.eslintrc` in the project root as follows:
 # Usage
 _Only make these changes if you want to remove ESLint as a direct dependency._
 ## CLI
-Replace `eslint` in commands with `$(npm root)/eslint-config-postman/node_modules/eslint/bin/eslint.js`
+No changes needed!
 
 ## Programmatic
 Replace `require('eslint')` with `require('eslint-config-postman/node_modules/eslint')`
@@ -32,7 +32,7 @@ find . -name .eslintrc -type f -mindepth 2 -delete;
 ## Optional
 >
 This is recommended to abstract plugin specifics away into one config bundle
-Skip this if you're using other plugins in addition to those covered by this config
+Skip this if you're using ESLint as a CLI, or if you're using other plugins in addition to those covered by this config
 
 ```sh
 npm uninstall eslint eslint-plugin-jsdoc eslint-plugin-lodash eslint-plugin-mocha eslint-plugin-node eslint-plugin-security
