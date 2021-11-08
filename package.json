@@ -15,9 +15,6 @@
   "author": "Postman Labs <help@postman.com> (=)",
   "license": "Apache-2.0",
   "homepage": "https://github.com/postmanlabs/eslint-config-postman#readme",
-  "bin": {
-    "eslint": "node_modules/eslint/bin/eslint.js"
-  },
   "dependencies": {
     "@rushstack/eslint-patch": "1.1.0",
     "eslint": "8.2.0",
