@@ -1,3 +1,7 @@
+// Makes the config self-contained via plugins as it's own dependencies
+// https://github.com/eslint/eslint/issues/3458
+require('@rushstack/eslint-patch/modern-module-resolution');
+
 const { join } = require('path'),
   { readdirSync } = require('fs');
 
@@ -22,12 +26,12 @@ module.exports = {
   ],
   overrides: [
     {
-      files: ['npm/*'],
+      files: ['npm/**/*'],
       globals: {
-        'exec': true,
-        'rm': true,
-        'set': true,
-        'test': true
+        exec: true,
+        rm: true,
+        set: true,
+        test: true
       }
     },
     {
@@ -36,10 +40,10 @@ module.exports = {
         mocha: true
       },
       globals: {
-        'exec': true,
-        'app': true, // as part of test bootstrap
-        'expect': true, // as part of test bootstrap
-        'sails': true
+        exec: true,
+        app: true, // as part of test bootstrap
+        expect: true, // as part of test bootstrap
+        sails: true
       },
       rules: {
         'prefer-const': 'off'
