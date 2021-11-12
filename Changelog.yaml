@@ -1,5 +1,8 @@
 # eslint-config-postman
 
+master:
+  - 'Added SonarJS plugin'
+
 0.0.3:
   date: 2021-11-08
   minor changes:
