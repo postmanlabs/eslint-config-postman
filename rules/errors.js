@@ -47,10 +47,12 @@ module.exports = {
     'no-unsafe-finally': 'error',
     'no-unsafe-negation': 'error',
     'no-useless-backreference': 'error',
+    'no-unused-private-class-members': 'error',
     'prefer-exponentiation-operator': 'error',
     'prefer-regex-literals': 'error',
     'require-atomic-updates': 'error',
     'require-unicode-regexp': 'off',
+    'strict': 'off',
     'use-isnan': 'error',
     'valid-typeof': 'error'
   }
