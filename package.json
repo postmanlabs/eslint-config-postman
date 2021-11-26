@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-postman",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Common ESLint rules for Postman",
   "bugs": "https://github.com/postmanlabs/eslint-config-postman/issues",
   "main": "index.js",
@@ -15,9 +15,12 @@
   "author": "Postman Labs <help@postman.com> (=)",
   "license": "Apache-2.0",
   "homepage": "https://github.com/postmanlabs/eslint-config-postman#readme",
+  "scripts": {
+    "update-rules": "node scripts/update-rules.js"
+  },
   "dependencies": {
     "@rushstack/eslint-patch": "1.1.0",
-    "eslint": "8.2.0",
+    "eslint": "8.3.0",
     "eslint-plugin-jsdoc": "37.0.3",
     "eslint-plugin-lodash": "7.3.0",
     "eslint-plugin-mocha": "9.0.0",

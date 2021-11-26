@@ -1,5 +1,6 @@
 module.exports = {
   plugins: ['mocha'],
+  env: { mocha: true },
   rules: {
     'mocha/handle-done-callback': 'error',
     'mocha/max-top-level-suites': 'error',
