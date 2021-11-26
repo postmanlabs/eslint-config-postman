@@ -1,5 +1,12 @@
 # eslint-config-postman
 
+0.1.0:
+  date: 2021-11-26
+  new features:
+    - Added SonarJS plugin
+  chores:
+    - Added script to detect stale rules
+
 0.0.3:
   date: 2021-11-08
   minor changes:

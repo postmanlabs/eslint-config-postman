@@ -6,7 +6,7 @@ const { join } = require('path'),
   { readdirSync } = require('fs');
 
 module.exports = {
-  plugins: ['jsdoc', 'lodash', 'mocha', 'node', 'security'],
+  plugins: ['jsdoc', 'lodash', 'mocha', 'node', 'security', 'sonarjs'],
   env: {
     browser: false,
     node: true,
@@ -26,38 +26,27 @@ module.exports = {
   ],
   overrides: [
     {
-      files: ['npm/**/*'],
+      files: ['test/**/*', 'npm/*'],
       globals: {
-        exec: true,
         rm: true,
         set: true,
-        test: true
-      }
-    },
-    {
-      files: ['test/**/*'],
-      env: {
-        mocha: true
-      },
-      globals: {
+        test: true,
         exec: true,
+        mocha: true,
         app: true, // as part of test bootstrap
         expect: true, // as part of test bootstrap
         sails: true
       },
       rules: {
-        'prefer-const': 'off'
-      }
-    },
-    {
-      files: ['test/**/*', 'npm/*'],
-      rules: {
+        'prefer-const': 'off',
+        'consistent-return': 'off',
+        'node/no-process-env': 'off',
+        'node/no-callback-literal': 'off',
         'security/detect-child-process': 'off',
         'security/detect-non-literal-require': 'off',
         'security/detect-non-literal-fs-filename': 'off',
-        'node/no-process-env': 'off',
-        'node/no-callback-literal': 'off',
-        'consistent-return': 'off'
+        'sonarjs/no-duplicate-string': 'off',
+        'sonarjs/no-identical-functions': 'off'
       }
     }
   ]
