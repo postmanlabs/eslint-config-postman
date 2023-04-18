@@ -1,5 +1,10 @@
 # eslint-config-postman
 
+0.1.2:
+  date: 2023-04-18
+  chores:
+    - Bumped JSDoc and SonarJS eslint-plugins for Node 18 support
+
 0.1.1:
   date: 2021-11-26
   bug fixes:
