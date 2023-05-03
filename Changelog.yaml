@@ -1,5 +1,10 @@
 # eslint-config-postman
 
+0.2.0:
+  date: 2023-05-03
+  new features:
+    - add TypeScript rules
+
 0.1.2:
   date: 2023-04-18
   chores:
