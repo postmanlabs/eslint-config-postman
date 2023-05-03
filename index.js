@@ -39,7 +39,10 @@ module.exports = {
       files: ['*.js', '*.ts'
       ],
       rules: {
-        'node/no-unsupported-features/es-syntax': 'off'
+        'node/no-unsupported-features/es-syntax': [
+          "error",
+          { ignores: ["modules"] }
+        ]
       }
     },
     {
