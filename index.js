@@ -41,6 +41,7 @@ module.exports = {
       parser: '@typescript-eslint/parser',
       // Rules inherited from https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/recommended.ts
       rules: {
+        // The next few rules are disabled as they duplicate TypeScript errors: https://github.com/typescript-eslint/typescript-eslint/issues/1273
         'constructor-super': 'off', // ts(2335) & ts(2377)
         'getter-return': 'off', // ts(2378)
         'no-const-assign': 'off', // ts(2588)
