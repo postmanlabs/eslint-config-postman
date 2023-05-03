@@ -6,7 +6,8 @@ const { join } = require('path'),
   { readdirSync } = require('fs');
 
 module.exports = {
-  plugins: ['jsdoc', 'lodash', 'mocha', 'node', 'security', 'sonarjs'],
+  plugins: ['jsdoc', 'lodash', 'mocha', 'node', 'security', 'sonarjs', '@typescript-eslint'],
+  parser: '@typescript-eslint/parser',
   env: {
     browser: false,
     node: true,
@@ -25,6 +26,22 @@ module.exports = {
     ...readdirSync(join(__dirname, 'rules')).map(rule => join(__dirname, 'rules', rule))
   ],
   overrides: [
+    {
+      files: [
+        '*.ts'
+      ],
+      extends: ["plugin:@typescript-eslint/recommended"],
+      rules: {
+        '@typescript-eslint/no-inferrable-types': 'warn'
+      }
+    },
+    {
+      files: ['*.js', '*.ts'
+      ],
+      rules: {
+        'node/no-unsupported-features/es-syntax': 'off'
+      }
+    },
     {
       files: ['test/**/*', 'npm/*'],
       globals: {
