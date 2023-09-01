@@ -74,6 +74,7 @@ module.exports = {
     'no-warning-comments': 'off',
     'no-with': 'error',
     'prefer-named-capture-group': 'off',
+    'prefer-object-has-own': 'error',
     'prefer-object-spread': 'off',
     'prefer-promise-reject-errors': 'error',
     'radix': 'error',

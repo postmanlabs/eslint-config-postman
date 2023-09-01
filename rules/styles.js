@@ -44,6 +44,7 @@ module.exports = {
       'allowArrayEnd': false
     }],
     'lines-between-class-members': ['error', 'always', { 'exceptAfterSingleLine': true }],
+    'logical-assignment-operators': 'off',
     'max-depth': 'error',
     'max-len': ['error', {
       'code': 120,
@@ -72,6 +73,7 @@ module.exports = {
     'no-array-constructor': 'error',
     'no-bitwise': 'off',
     'no-continue': 'off',
+    'no-empty-static-block': 'error',
     'no-inline-comments': 'off',
     'no-lonely-if': 'error',
     'no-mixed-operators': ['error', {
