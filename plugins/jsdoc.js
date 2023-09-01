@@ -14,10 +14,11 @@ module.exports = {
     'jsdoc/check-values': 'error',
     'jsdoc/empty-tags': 'error',
     'jsdoc/implements-on-classes': 'error',
+    'jsdoc/informative-docs': 'off',
     'jsdoc/match-description': 'off',
     'jsdoc/multiline-blocks': 'off',
-    'jsdoc/newline-after-description': 'error',
     'jsdoc/no-bad-blocks': 'error',
+    'jsdoc/no-blank-block-description': 'off',
     'jsdoc/no-defaults': 'off',
     'jsdoc/no-missing-syntax': 'off',
     'jsdoc/no-multi-asterisks': 'off',
@@ -46,7 +47,8 @@ module.exports = {
     'jsdoc/require-throws': 'off',
     'jsdoc/require-yields': 'off',
     'jsdoc/require-yields-check': 'off',
-    'jsdoc/tag-lines': ['error', 'never'],
-    'jsdoc/valid-types': 'error',
+    'jsdoc/sort-tags': 'off',
+    'jsdoc/tag-lines': 'off',
+    'jsdoc/valid-types': 'error'
   }
 };
