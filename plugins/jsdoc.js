@@ -42,7 +42,7 @@ module.exports = {
     'jsdoc/require-property-type': 'error',
     'jsdoc/require-returns': 'off',
     'jsdoc/require-returns-check': 'error',
-    'jsdoc/require-returns-description': 'error',
+    'jsdoc/require-returns-description': 'off',
     'jsdoc/require-returns-type': 'error',
     'jsdoc/require-throws': 'off',
     'jsdoc/require-yields': 'off',

@@ -12,7 +12,7 @@ module.exports = {
   env: {
     browser: false,
     node: true,
-    es2024: true
+    es2022: true
   },
   parserOptions: {
     ecmaVersion: 'latest',

@@ -73,7 +73,7 @@ module.exports = {
     'no-array-constructor': 'error',
     'no-bitwise': 'off',
     'no-continue': 'off',
-    'no-empty-static-block': 'error',
+    // 'no-empty-static-block': 'error',
     'no-inline-comments': 'off',
     'no-lonely-if': 'error',
     'no-mixed-operators': ['error', {
