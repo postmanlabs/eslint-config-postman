@@ -43,7 +43,7 @@ module.exports = {
     'jsdoc/require-returns': 'off',
     'jsdoc/require-returns-check': 'error',
     'jsdoc/require-returns-description': 'off',
-    'jsdoc/require-returns-type': 'error',
+    'jsdoc/require-returns-type': 'off',
     'jsdoc/require-throws': 'off',
     'jsdoc/require-yields': 'off',
     'jsdoc/require-yields-check': 'off',
