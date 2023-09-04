@@ -2,18 +2,20 @@
 // https://github.com/eslint/eslint/issues/3458
 require('@rushstack/eslint-patch/modern-module-resolution');
 
-const { join } = require('path'),
-  { readdirSync } = require('fs');
+const { join, parse } = require('path'),
+  { readdirSync } = require('fs'),
+
+  plugins = readdirSync(join(__dirname, 'plugins')).map(plugin => parse(plugin).name);
 
 module.exports = {
-  plugins: ['jsdoc', 'lodash', 'mocha', 'node', 'security', 'sonarjs', '@typescript-eslint'],
+  plugins,
   env: {
     browser: false,
     node: true,
-    es6: true
+    es2022: true
   },
   parserOptions: {
-    ecmaVersion: 2020,
+    ecmaVersion: 'latest',
     sourceType: 'module'
   },
   settings: {
@@ -22,22 +24,13 @@ module.exports = {
     }
   },
   extends: [
-    ...readdirSync(join(__dirname, 'plugins')).map(plugin => join(__dirname, 'plugins', plugin)),
+    ...plugins.map(plugin => join(__dirname, 'plugins', `${plugin}.js`)),
     ...readdirSync(join(__dirname, 'rules')).map(rule => join(__dirname, 'rules', rule))
   ],
   overrides: [
     {
-      files: ['*.js', '*.ts'],
-      rules: {
-        'node/no-unsupported-features/es-syntax': [
-          "off"
-        ]
-      }
-    },
-    {
-      files: [
-        '*.ts'
-      ],
+      files: ['*.ts'],
+      plugins: plugins.concat('@typescript-eslint'),
       parser: '@typescript-eslint/parser',
       // Rules inherited from https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/recommended.ts
       rules: {
@@ -63,37 +56,43 @@ module.exports = {
         'prefer-rest-params': 'error', // ts provides better types with rest args over arguments
         'prefer-spread': 'error', // ts transpiles spread to apply, so no need for manual apply
         'valid-typeof': 'off', // ts(2367)
+
         '@typescript-eslint/adjacent-overload-signatures': 'error',
         '@typescript-eslint/ban-ts-comment': 'error',
         '@typescript-eslint/ban-types': 'error',
-        'no-array-constructor': 'off',
-        '@typescript-eslint/no-array-constructor': 'error',
-        'no-empty-function': 'off',
-        '@typescript-eslint/no-empty-function': 'error',
         '@typescript-eslint/no-empty-interface': 'error',
         '@typescript-eslint/no-explicit-any': 'warn',
         '@typescript-eslint/no-extra-non-null-assertion': 'error',
-        'no-extra-semi': 'off',
-        '@typescript-eslint/no-extra-semi': 'error',
         '@typescript-eslint/no-inferrable-types': 'warn',
-        'no-loss-of-precision': 'off',
-        '@typescript-eslint/no-loss-of-precision': 'error',
         '@typescript-eslint/no-misused-new': 'error',
         '@typescript-eslint/no-namespace': 'error',
         '@typescript-eslint/no-non-null-asserted-optional-chain': 'error',
         '@typescript-eslint/no-non-null-assertion': 'warn',
         '@typescript-eslint/no-this-alias': 'error',
         '@typescript-eslint/no-unnecessary-type-constraint': 'error',
-        'no-unused-vars': 'off',
-        '@typescript-eslint/no-unused-vars': 'warn',
         '@typescript-eslint/no-var-requires': 'error',
         '@typescript-eslint/prefer-as-const': 'error',
         '@typescript-eslint/prefer-namespace-keyword': 'error',
         '@typescript-eslint/triple-slash-reference': 'error',
+
+        'no-array-constructor': 'off',
+        '@typescript-eslint/no-array-constructor': 'error',
+
+        'no-empty-function': 'off',
+        '@typescript-eslint/no-empty-function': 'error',
+
+        'no-extra-semi': 'off',
+        '@typescript-eslint/no-extra-semi': 'error',
+
+        'no-loss-of-precision': 'off',
+        '@typescript-eslint/no-loss-of-precision': 'error',
+
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': 'warn',
       }
     },
     {
-      files: ['test/**/*', 'npm/*'],
+      files: ['test/**/*', 'npm/**/*'],
       globals: {
         rm: true,
         set: true,
@@ -107,6 +106,7 @@ module.exports = {
       rules: {
         'prefer-const': 'off',
         'consistent-return': 'off',
+        'jsdoc/tag-lines': 'off',
         'node/no-process-env': 'off',
         'node/no-callback-literal': 'off',
         'security/detect-child-process': 'off',

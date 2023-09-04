@@ -11,7 +11,7 @@ module.exports = {
     'node/no-unpublished-import': 'error',
     'node/no-unpublished-require': 'off',
     'node/no-unsupported-features/es-builtins': 'error',
-    'node/no-unsupported-features/es-syntax': 'error',
+    'node/no-unsupported-features/es-syntax': 'off',
     'node/no-unsupported-features/node-builtins': 'error',
     'node/process-exit-as-throw': 'off',
     'node/shebang': 'error',
