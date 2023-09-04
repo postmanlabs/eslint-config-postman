@@ -5,6 +5,7 @@ module.exports = {
     'mocha/handle-done-callback': 'error',
     'mocha/max-top-level-suites': 'error',
     'mocha/no-async-describe': 'off',
+    'mocha/no-empty-description': 'error',
     'mocha/no-exclusive-tests': 'error',
     'mocha/no-exports': 'error',
     'mocha/no-global-tests': 'error',
