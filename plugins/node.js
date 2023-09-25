@@ -5,7 +5,9 @@ module.exports = {
     'node/no-exports-assign': 'error',
     'node/no-extraneous-import': 'error',
     'node/no-extraneous-require': 'off',
-    'node/no-missing-import': 'error',
+    'node/no-missing-import': ['error', {
+      tryExtensions: ['.js', '.json', '.node', '.ts']
+    }],
     'node/no-missing-require': 'error',
     'node/no-unpublished-bin': 'error',
     'node/no-unpublished-import': 'error',
